@@ -1,0 +1,154 @@
+
+.background-gradient {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+
+    background: conic-gradient(
+            from 180deg at 50% 50%,
+            #F6C6F9 0deg,
+            #FFE397 90deg,
+            #F6C6F9 180deg,
+            #FFE397 270deg,
+            #F6C6F9 360deg
+    );
+
+    filter: blur(80px);
+    opacity: 0.9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.card {
+    background-color: #FFFBF7; /* Un blanco crema muy sutil, como en la imagen */
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 40px; /* Bordes muy redondeados */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    text-align: center;
+    position: relative;
+}
+
+/* Logo (Perro) */
+.logo-container {
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 60px; /* Ajusta según el tamaño de tu imagen */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Título */
+h2 {
+    color: #4a4a4a;
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-size: 1.25rem;
+}
+
+/* --- CAJA DEL FORMULARIO (La caja blanca interna) --- */
+.form-box {
+    background-color: #ffffff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #aaa;
+}
+
+.input-group input::placeholder {
+    color: #ccc;
+}
+
+/* Botón */
+.btn-login {
+    width: 100%;
+    background-color: #262626; /* Negro suave/Gris oscuro */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #000;
+}
+
+/* Link "Olvidé mi contraseña" */
+.forgot-link {
+    display: block;
+    text-align: left;
+    font-size: 0.8rem;
+    color: #333;
+    text-decoration: underline;
+}
+
+/* --- PIE DE PÁGINA (Registrarse) --- */
+.register-section {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.register-section a {
+    color: #2b6cb0; /* Azul estándar */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-section a:hover {
+    text-decoration: underline;
+}
