@@ -49,6 +49,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+
+
     </dependencies>
 
     <properties>
