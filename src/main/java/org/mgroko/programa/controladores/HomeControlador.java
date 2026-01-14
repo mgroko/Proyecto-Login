@@ -7,14 +7,18 @@ import org.springframework.ui.Model;
 
 @Controller
 public class HomeControlador {
+    @GetMapping("/")
+    public String mostrarPaginaInicio() {
+
+        return "redirect:/login";
+
+    }
     @GetMapping("/login")
-    public String mostrarPaginaLogin(Model model) {
-
-        System.out.println( "CONTROLADOR!!!!!!!!!!!!!!!!!!!!!!");
-
+    public String muestroLogin(Model model){
 
         model.addAttribute("datosLogin", new Usuario());
         return "login-register/login-page";
-    }
 
+
+    }
 }
