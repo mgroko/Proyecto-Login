@@ -1,33 +1,35 @@
 package org.mgroko.programa.modelo;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+
+@Data
+@Entity
+@Table(name = "Usuario")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idUser;
-    private String name;
+
+    // todo VERIFICAR LA LONGITUD DEL usuario y contraseña
+
+    @NotBlank(message = "El nombre de usuario es obligatorio")
+    @Size(min = 5, max = 30, message = "El usuario debe tener entre 5 y 30 caracteres")
+    @Column(name = "username", nullable = false, length = 30)
+    private String username;
+
+    @NotBlank(message = "La contraseña es obligatoria")
+    @Size(min = 6, max = 30, message = "La contraseña debe tener entre 5 y 30 caracteres")
+    @Column(name = "password", nullable = false, length = 30)
     private String password;
 
-    public Usuario() {}
-    public Usuario(int idUser, String name, String password) {
-        this.idUser = idUser;
-        this.name = name;
-        this.password = password;
-    }
-    public int getIdUser() {
-        return idUser;
-    }
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
+
 
 }
