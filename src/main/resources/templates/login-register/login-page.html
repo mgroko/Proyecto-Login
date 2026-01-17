@@ -23,7 +23,7 @@
     <div class="form-box">
         <form th:action="@{/login}" th:object="${datosLogin}" method="post">
 
-            <!-- AGREGAR CON JS [un elemento y que sea mas dinamico] -->
+            <!-- AGREGAR CON JS [un elemento para que sea mas dinamico] -->
             <div th:if="${param.error}" style="color: red; font-size: 0.8rem; margin-bottom: 10px;">
                 Usuario o contraseña incorrectos.
             </div>
