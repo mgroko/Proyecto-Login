@@ -24,5 +24,4 @@ public class Rol {
                 this.nombre = nombre;
         }
 
-        //AGREGAR un ROL ROLE_USER en la base de datos!!!!
 }

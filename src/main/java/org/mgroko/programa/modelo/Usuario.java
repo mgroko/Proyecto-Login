@@ -1,8 +1,5 @@
 package org.mgroko.programa.modelo;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Collection;
@@ -21,27 +18,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idUser;
 
-    // todo VERIFICAR LA LONGITUD DEL usuario y contraseña
-
-    @NotBlank(message = "El nombre de usuario es obligatorio")
-    @Size(min = 5, max = 30, message = "El usuario debe tener entre 5 y 30 caracteres")
-    @Column(name = "username", nullable = false, length = 30)
+    @Column(name = "username", nullable = false, length =30)
     private String username;
 
-    @NotBlank(message = "La contraseña es obligatoria")
-    @Size(min = 6, max = 30, message = "La contraseña debe tener entre 5 y 30 caracteres")
-    @Column(name = "password", nullable = false, length = 30)
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
 
-    @NotBlank(message = "El nombre es obligatorio")
-    @Size(min = 2, max = 100, message = "El nombre debe tener entre 2 y 100 caracteres")
-    @Pattern(regexp = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$", message = "El nombre solo puede contener letras y espacios")
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @NotBlank(message = "El apellido es obligatorio")
-    @Size(min = 2, max = 100, message = "El apellido debe tener entre 2 y 100 caracteres")
-    @Pattern(regexp = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$", message = "El apellido solo puede contener letras y espacios")
     @Column(name = "apellido", nullable = false, length = 100)
     private String apellido;
 

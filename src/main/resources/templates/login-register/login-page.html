@@ -13,39 +13,24 @@
 
 <div class="background-gradient"></div>
 
+<div th:if="${param.exito}" class="alert alert-success alert-flotante" role="alert">
+    Iniciaste sesión.
+</div>
+
+<div th:if="${param.error}" class="alert alert-danger alert-flotante" role="alert">
+    Error al iniciar sesión.
+</div>
+
+
 <div class="card">
     <div class="logo-container">
         <img th:src="@{/imagen/chloe.png}" alt="Logo Chloe" class="logo">
-    </div>
-
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
-
-    <div th:if="${param.exito}" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="alert alert-info">
-                Se ha iniciado sesión exitosamente.
-            </div>
-        </div>
-    </div>
-
-
-
-    <div th:if="${param.exito}">
-        <div class="alert alert-info">
-            Se ha iniciado sesión exitosamente.
-        </div>
     </div>
 
     <h2>Inicio de sesión</h2>
 
     <div class="form-box">
         <form th:action="@{/login}" th:object="${datosLogin}" method="post">
-
-            <!-- AGREGAR CON JS [un elemento para que sea mas dinamico] -->
-            <div th:if="${param.error}" style="color: red; font-size: 0.8rem; margin-bottom: 10px;">
-                Usuario o contraseña incorrectos.
-            </div>
 
             <div class="input-group">
                 <label for="usuario">Usuario</label>

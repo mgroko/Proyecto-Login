@@ -1,10 +1,12 @@
 package org.mgroko.programa.controladores;
 
 import ch.qos.logback.core.model.Model;
+import jakarta.validation.Valid;
 import org.mgroko.programa.dto.UsuarioRegistroDTO;
 import org.mgroko.programa.modelo.Usuario;
 import org.mgroko.programa.servicio.UsuarioServicio;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,9 +33,19 @@ public class RegistroUsuarioControlador {
     }
 
     @PostMapping
-    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistroDTO registroDTO) {
-        usuarioServicio.save(registroDTO);
-        return "redirect:/registro?exito";
+    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") @Valid UsuarioRegistroDTO registroDTO, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "login-register/register-page";
+        }
+
+        try {
+            usuarioServicio.save(registroDTO);
+            return "redirect:/registro?exito";
+
+        }  catch (Exception e) {
+            return "redirect:/registro?error=true";
+        }
     }
 
 }
