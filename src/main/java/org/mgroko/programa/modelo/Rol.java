@@ -23,4 +23,6 @@ public class Rol {
         public Rol(String nombre) {
                 this.nombre = nombre;
         }
+
+        //AGREGAR un ROL ROLE_USER en la base de datos!!!!
 }
