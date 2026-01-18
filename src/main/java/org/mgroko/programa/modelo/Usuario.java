@@ -47,7 +47,6 @@ public class Usuario {
 
     // Relacion de muchos a muchos con usuario y rol. Creamos una tabla mediante un JoinTable para la relación
     // Se unen las columnas idUser e idRol.
-    // Pongo CascadeType.ALL por el momento, pero no es recomendable
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
             name = "usuarios_roles",

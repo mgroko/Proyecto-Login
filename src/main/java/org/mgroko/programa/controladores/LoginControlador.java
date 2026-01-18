@@ -17,9 +17,9 @@ public class LoginControlador {
     public String inicioSesion(@ModelAttribute Usuario usuario) {
         try {
             loginServicio.iniciarSesion(usuario.getUsername(), usuario.getPassword());
-            return "redirect:/login";
+            return "redirect:/login?exito";
         } catch (Exception e) {
-            return "redirect:/login" + "?error=" + e.getMessage();
+            return "redirect:/login?error=" + e.getMessage();
         }
 
 }

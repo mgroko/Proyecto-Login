@@ -13,17 +13,18 @@
 
 <div class="background-gradient"></div>
 
+<div th:if="${param.exito}">
+    <div class="alert alert-info">
+        Se ha registrado exitosamente.
+    </div>
+</div>
+
 <div class="card">
     <div class="logo-container">
         <img th:src="@{/imagen/chloe.png}" alt="Logo Chloe" class="logo">
     </div>
 
 
-    <div th:if="${param.exito}">
-        <div class="alert alert-info">
-            Se ha registrado exitosamente.
-        </div>
-    </div>
 
     <h2>Registrarse</h2>
 
