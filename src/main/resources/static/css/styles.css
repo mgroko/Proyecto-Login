@@ -41,7 +41,7 @@ body {
     width: 100%;
     max-width: 420px;
     padding: 40px 30px;
-    border-radius: 40px; /* Bordes muy redondeados */
+    border-radius: 40px !important; /* Bordes muy redondeados */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); /* Sombra suave */
     text-align: center;
     position: relative;
@@ -151,4 +151,44 @@ h2 {
 
 .register-section a:hover {
     text-decoration: underline;
+}
+
+/* --- ALERTA FLOTANTE --- */
+.alert-flotante {
+    position: fixed; /* Se fija a la pantalla, no a la tarjeta */
+    top: 30px;       /* Distancia desde el techo */
+    left: 50%;       /* Centrado horizontal */
+    transform: translateX(-50%); /* Corrección exacta del centrado */
+    z-index: 9999;   /* Asegura que flote encima de tdo */
+
+    width: 90%;
+    max-width: 400px; /* Que no sea más ancha que tu tarjeta */
+
+    /* Estética */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* Sombra para resaltar */
+    text-align: center;
+    font-size: 0.9rem;
+
+    /* Animación opcional para que baje suavemente */
+    animation: slideDown 0.5s ease, slideUp 0.5s ease 4s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+    from { top: -100px; opacity: 0; }
+    to { top: 30px; opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: -100px;
+        opacity: 0;
+    }
 }
