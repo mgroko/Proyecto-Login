@@ -5,6 +5,6 @@ import org.mgroko.programa.dto.UsuarioRegistroDTO;
 
 public interface UsuarioServicio {
 
-    public Usuario save(UsuarioRegistroDTO registroDTO);
+    public Usuario registerUser(UsuarioRegistroDTO registroDTO);
 
 }

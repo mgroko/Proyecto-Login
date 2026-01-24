@@ -1,9 +1,7 @@
 package org.mgroko.programa.controladores;
 
-import ch.qos.logback.core.model.Model;
 import jakarta.validation.Valid;
 import org.mgroko.programa.dto.UsuarioRegistroDTO;
-import org.mgroko.programa.modelo.Usuario;
 import org.mgroko.programa.servicio.UsuarioServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registro")
 public class RegistroUsuarioControlador {
 
-    private UsuarioServicio usuarioServicio;
+    private final UsuarioServicio usuarioServicio;
 
     public RegistroUsuarioControlador(UsuarioServicio usuarioServicio) {
         this.usuarioServicio = usuarioServicio;
@@ -40,7 +38,7 @@ public class RegistroUsuarioControlador {
         }
 
         try {
-            usuarioServicio.save(registroDTO);
+            usuarioServicio.registerUser(registroDTO);
             return "redirect:/registro?exito";
 
         }  catch (Exception e) {

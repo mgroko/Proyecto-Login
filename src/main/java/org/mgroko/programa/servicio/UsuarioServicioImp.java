@@ -21,7 +21,7 @@ public class UsuarioServicioImp implements UsuarioServicio {
     }
 
     @Override
-    public Usuario save(UsuarioRegistroDTO registroDTO) {
+    public Usuario registerUser(UsuarioRegistroDTO registroDTO) {
 
         if (usuarioRepositorio.existsByUsername(registroDTO.getUsername())) {
             throw new IllegalArgumentException("El nombre de usuario no está disponible");
