@@ -5,6 +5,5 @@ import org.mgroko.programa.dto.UsuarioRegistroDTO;
 
 public interface UsuarioServicio {
 
-    public Usuario registerUser(UsuarioRegistroDTO registroDTO);
 
 }

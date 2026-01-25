@@ -21,7 +21,7 @@ public class Usuario {
     @Column(name = "username", nullable = false, length =30)
     private String username;
 
-    @Column(name = "password", nullable = false, length = 255)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "nombre", nullable = false, length = 100)
@@ -35,8 +35,8 @@ public class Usuario {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
             name = "usuarios_roles",
-            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "idUser"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "idRol")
+            joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "idUser"),
+            inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "idRol")
     )
     private Collection<Rol> roles;
 
